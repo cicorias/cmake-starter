@@ -9,7 +9,7 @@
 
 #define ADDRESS     "tcp://broker.emqx.io:1883"
 #define CLIENTID    "ExampleClientPub"
-#define TOPIC       "test"
+#define TOPIC       "testtopic/shawn"
 #define QOS         1
 #define TIMEOUT     10000L
 
