@@ -2,7 +2,7 @@
 
 // #include <stdio.h>
 // #include <stdlib.h>
-// #include <string.h>
+#include <string.h>
 #include <MQTTClient.h>
 #include <MQTTAsync.h>
 
@@ -42,7 +42,7 @@ int main(int, char**) {
 
     MQTTClient_publishMessage(client, TOPIC, &pubmsg, &token);
     printf("Waiting for publication of %s on topic %s for client with ClientID: %s\n",
-           pubmsg.payload, TOPIC, CLIENTID);
+           (char *)pubmsg.payload, TOPIC, CLIENTID);
     rc = MQTTClient_waitForCompletion(client, token, TIMEOUT);
     printf("Message with delivery token %d delivered\n", token);
 
